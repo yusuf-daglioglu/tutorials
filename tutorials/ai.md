@@ -1,0 +1,961 @@
+# AI
+
+IIIIIIIIIIIIIIIIIIIIIIIIIIIIIIII
+
+IIIIIIIIIIIIIIIIIIIIIIIIIIIIIIII
+
+## 📌 yapay zeka (⟷ Artificial Intelligence ⟷ AI)
+
+bir bilgisayarın, gerçek bir düşünebilen canlı gibi davranması (insan zekasını taklit edebilme) yeteneğidir. Bu terim kullanılırken arka planda bu işin nasıl yaptığı ile ilgilenilmez.
+
+## 📌 Makine öğrenimi (⟷ machine learning ⟷ ML)
+
+`AI` sanal bir beyindir. Fakat kendini eğitebilmesi konusu ayrıdır ve `ML` konusuna girer.
+
+## 📌 yapay sinir ağı (⟷ YSA ⟷ Artificial neural network ⟷ ANN)
+
+`YSA`, yapay bir zeka yapabilmek için bir mimaridir (yöntemdir). `AI` için, `YSA` kullanılmak zorunda değiliz. onun yerine eski oyunlarda olduğu gibi, araba yarışı tasarlayabilir ve diğer yarışçıların da akıllı davranabilmesini sağlayabiliriz.
+
+## 📌 MLP (⟷ Multi-layer perceptron)
+
+birden fazla katmanı olan `YSA`'dır.
+
+## 📌 transformers
+
+`transformers` mimarisinde, `MLP`'nin önünde `attention` aşaması vardır.
+
+## 📌 Sinaptik (⟷ Sinaptic)
+
+`Sinaps (⟷ Synapse)` kelimesinde geliyor. `Sinaps`; `nöron (⟷ sinir hücresi ⟷ neuron)` denilen yapıdan, diğer `nöron`lara ya da kas ya da salgı bezleri gibi `nöron` olmayan hücrelere mesaj iletmesine olanak tanıyan özelleşmiş bağlantı noktalarıdır.
+
+## 📌 Bağlantısallık (Connectionism)
+
+`YSA` yapısının felsefesi (teorisidir). sinir ağları arasındaki bağlantıları temsil eden teoridir.
+
+## 📌 YSA Katmanlar (⟷ Layers)
+
+`YSA`'nın ilk girdi aldığı hücreler ve son çıkışa giden hücreler arasında da hücreler olabilir. aradaki katmanlara (ilk ve son katmanlar hariç) `gizli katmanlar (⟷ ara katmanlar)` denir. Dolayısı ile gizli katmanlı olan bir ağ, en az 3 katmandan oluşuyordur.
+
+çok katmanlı `YSA`, en az 2 katmandan oluşur.
+
+bir `YSA`, en az 1 katmandan oluşabilir.
+
+## 📌 Ağın Eğitilmesi
+
+`YSA`'nın eğitilmesi için doğru olarak bilinen giriş ve çıkış değerlerinin elimizde olması gerekir. `YSA`'ya girdiler verilir ve `YSA`'nın verdiği çıktı ile gerçek çıktı karşılaştırılır. İşte bu hata payına göre, `weight` değerleri her işlem sonrası değiştirilir. Bu eğitim şekline `geri besleme (⟷ geri yayılım ⟷ backpropagation)` denir. Birçok farklı `eğitim (⟷ training)` şekli düşünülebilir.
+
+Ağa ilk `W` değerleri ya rastgele yada belli referanslara dayanılarak ta atanabilir.
+
+Test süreçlerinde `YSA`'nın eğitilmemesi gerekmektedir.
+
+## 📌 Perceptron
+
+kelime anlamı: Algılayıcı
+
+`nöron`'ların yaptığı işleme denir. `weight` ile çarpma, `bias` ekleme, `aktivasyon fonskiyonu`na sokma gibi işlemlerin bütünüdür.
+
+## 📌 Hopfield Ağları (Hopfield Net)
+
+Aşağıdaki kurallara uyan sinir ağlarına verilen özel isimdir. Bunun gibi birçok ağ mevcuttur.
+
+- Tüm hücrelerde sadece 1 ve 0 değerleri giriş çıkışlarda olmalıdır
+
+- `nöron`lara gelen `weight`'lar `aktivasyon fonksiyonu`na gelmeden hemen önce toplanırlar
+
+- `nöron`larda `aktivasyon fonksiyonu` olmalı ve eşik değeri kullanılmalıdır
+
+Katman kavramı yoktur. Tüm hücreler diğer tüm hücrelere bağlıdır. Yani aslında tek katmanlıdır diyebiliriz. Böylece tüm girişler (hücreler) aynı zamanda çıkışları verecektir. `n` girişli ve `n` çıkışlıdır. Her bir hücre çıkışı, bir sonraki iterasyonda diğer tüm hücrelerin girişine etki etmektedir.
+
+## 📌 LLM içinde sıkça kullanılan fonksiyonlar
+
+### 📌📌 Eşik fonksiyonu (⟷ Threshold Function)
+
+Örnek: Termostat
+
+- Oda sıcaklığı 20 C'nin altındaysa, 0 (Isıtıcı kapalı)
+- Oda sıcaklığı 20 C veya üzerindeyse, 1 (Isıtıcı açık)
+
+### 📌📌 Basamak fonksiyonu (⟷ Step Function)
+
+Örnek: Otopark ücret tarifesi
+
+- 1 saate kadar 50 TL
+- 1-2 saat 100 TL
+- 2-3 saat 150 TL
+- 3-4 saat 200 TL
+
+### 📌📌 Aktivasyon fonksiyonu (⟷ Activation Function)
+
+bir `nöron`un kendisine gelen girdileri işledikten sonra, bu bilginin bir sonraki katmana aktarılıp aktarılmayacağına ve ne kadar güçlü aktarılacağına karar veren matematiksel bir fonksiyondur.
+
+yukarıdaki amaç için yazılan herhangi bir fonksiyon, `Aktivasyon fonksiyonu`'dur.
+
+### 📌📌 Sigmoid
+
+sıkça tercih edilen bir `Aktivasyon fonksiyonu`'udur.
+
+`Eşik fonksiyon` ailesindendir.
+
+basit bir formülü var. girdi değeri ne olursa olsun, çıktı değeri hep 0 ile 1 arasındadır.
+
+## 📌 iterasyon vs epoch
+
+`epoch`'un `Türkçe` kelime anlamı: devir, çağ, dönem'dir.
+
+iterasyon; `YSA`'nın bir kere input alıp, bir kere çıktı vermesine kadar olan süreçtir.
+
+`YSA`'lar eğitilirken bir eğitim seti (giriş ve çıkış seti) olmaktadır. Bu tüm set `YSA`'ya verilir ve `YSA` kendini sonuçlara göre eğitir. Tüm eğitim seti dolaşıldığında bir epoch süresi geçmiş sayılır. `YSA` eğitiminde bazen epoch sayısını (aynı eğitim seti için) birçok kere geçmek gerekebilir.
+
+her eğitim sonrası `weight` ve `bias` dğerleri update olur.
+
+## 📌 YSA örneği
+
+Giriş data'sı, her `hücre (⟷ node ⟷ düğüm)` denilen yapıya geldiğinde `ağırlık (⟷ W ⟷ Weight)` değeri ile çarpılır. Her girişten gelen, aynı derecede önemsenmeyeceği için bu çarpım işlemi yapılır.
+
+```mermaid
+flowchart LR
+    I1["Input 1 = 1"]
+    I2["Input 2 = 2"]
+
+    subgraph L1["1. Layer"]
+        A["Nöron 1<br/>Bias = 1"]
+        B["Nöron 2<br/>Bias = 2"]
+    end
+
+    subgraph L2["2. Layer"]
+        C["Nöron 1<br/>Bias = 3"]
+        D["Nöron 2<br/>Bias = 4"]
+    end
+
+    O["Output"]
+
+    I1 -->|"weight = 1"| A
+    I1 -->|"weight = 2"| B
+    I2 -->|"weight = 3"| A
+    I2 -->|"weight = 4"| B
+
+    A -->|"weight = 5"| C
+    A -->|"weight = 6"| D
+    B -->|"weight = 7"| C
+    B -->|"weight = 8"| D
+
+    C -->|"weight = 9"| O
+    D -->|"weight = 10"| O
+```
+
+yukarıdaki `AI` için;
+
+- gizli layer = 2
+
+- Toplam layer sayısı = 4
+
+- `Context window` = 2
+
+   2 adet input var. alabileceği max input sayısı 2'dir.
+
+- `parametre` sayısı = 14 = 10 adet `weight` + 4 adet `bias`
+
+Her input birer `token` alır. örnek cümle:
+
+```
+Kitaplar okunuyor.
+```
+
+`Token`'lara bölünmüş hali: 
+
+```
+Kitap
+lar
+oku
+nuyor
+```
+
+`token`'a bölerken, ekler ve kökler ayrılır. `Tokenization` işlemini herkes farklı implemente edebiliyor.
+
+`Tokenization` işlemini `inference runtime` yapar.
+
+## 📌 context
+
+`input` ile `input token` aynı anlama gelir. 
+
+`context window (⟷ context lenght)`, `ai model`'in tek seferde yürütebildiği max `token` sayısı.
+
+`context window` = `LLM`'in max input + output sayısıdır. daha fazla input verirsek daha fazla output için yer kalır havuzda. `context window` ortaklaşa paylaşılır. yani şöyle 2 denklem yazabiliriz:
+
+```
+max input + max output > context window
+(genelde böyle, ama context window daha büyükte olabilir)
+```
+
+```
+anlık input + anlık output < context window 
+```
+
+`LLM`'in input ve output sayıları farklı olabilir.
+
+`Max Output Tokens` ifadesine piyasada `Max Token` denildiği oluyor. `Max Output Tokens`, `LLM`'in output sayısıdır.
+
+## 📌 Generative AI (⟷ Generative artificial intelligence ⟷ generative AI ⟷ GenAI ⟷ GAI ⟷ üretken yapay zeka)
+
+yeni şeyleri kendi üretebilen zekalardır. bunu yapmak için yine geçmiş verilerden yararlanır.
+
+## 📌 Dil modeli (⟷ Language Model ⟷ LM)
+
+`dil`, burada input'u temsil eder. örnekler:
+- `Türkçe` metin
+- `İngilizce` metin
+- `Java` kodu
+- Özel formatlanmış audit log dosyası
+- `regex`
+
+`ai model`, matematiksel bir fonksiyon. input olarak `vector` alır, çıktı olarak yine `vector` verir.
+
+`ai model`, kendi içinde kaç adet `weight` ve `bias` barındırdığına göre kategorize edilir. gerçek örnek değerler:
+
+- `Small (or Edge)` - 1B to 4B
+- `Medium (Desktop)` - 7B to 14B
+- `Large`	- 70B - 100B+
+- `Very Large (Frontier)` - 500B to 1T+
+
+bu büyüklüklerin resmi bir sınıflandırması yoktur. 
+
+büyük olanlar `LLM (⟷ Large Language Model)`, küçük olanlar `SLM (⟷ Small Language Model)` olarak sınıflandırılırlar. Medium olanlar, `MLM` olarak kısaltılmıyor çünkü `AI` dünyasında `MLM`'nin farklı anlamı var.
+
+## 📌 Modality
+
+`AI model`'in veri kanalıdır. örnekler:
+
+- `LM` için `modality`, `dil`'dir.
+- görüntü inputu alıp görüntü sunabilen `ai model`'lerin 'si `modality` `dil` değildir. görüntüdür.
+- ses
+
+`multimodal` birden fazla input çeşidini destekleyen `ai model`'idir. Örneğin `video` düzenleyebilen `ai model`'ler hem görüntü hem ses ile çalışırlar.
+
+## 📌 image-to-image
+
+bu tarz `ai model`'ler, sadece görüntü alır ve çıktı olarak ne resim göstereceğini metin olarak almaz. çünkü zaten eğitim aşamasında ne görevi olduğu tanımlanmıştır.
+
+örneğin; kalemle çizilen basit bir çizimi, gerçekçi bir görüntüye çevir. 
+
+## 📌 diffusion model
+
+`diffusion` kelime anlamı: yayılım. bir maddenin etrafa yayılması.
+
+görüntü üreten `ai model`'ler `diffusion` tekniğini kullandıkları için böyle isimlendirilirler.
+
+gürültüden görsel üretir ifadesi kullanılır. çünkü ilk görsel üretmeye başladıklarında random pixel ile başlarlar. bu random görsele, gürültü nedir. bu görseli eğiterek sonuca ulaşırlar.
+
+piyasadaki bazı ürünler:
+
+- firma: `OpenAI`
+
+  `ai model`: `DALL-E`
+
+- firma: `Stability AI`
+
+  `ai model`: `stable diffusion`
+
+- firma: `Midjourney`
+
+  `ai model`: `midjourney`
+
+## 📌 markalar ve ürünler
+
+aşağıdaki listede ufak hatalar olabilir. bu kaynakta: https://www.promptingguide.ai/models isimler ayrı ayrı farklı ürünlere mi tekabül ediyor çıkarımı yapılabiliyor.
+
+| Company                                                  | Model / Ürün                             | Açıklama / Görevler                                                                                                             |
+|----------------------------------------------------------|------------------------------------------|---------------------------------------------------------------------------------------------------------------------------------|
+| `Meta`                                                   | `Llama (⟷ Large Language Model Meta AI)` | `ai model`                                                                                                                      |
+| `Meta`                                                   | `Meta AI`                                | görevleri: `ai model` hariç herşey.                                                                                             |
+| `OpenAI`                                                 | `GPT`                                    | `ai model` ailesinin ismi.                                                                                                      |
+| `OpenAI`                                                 | `Luna`                                   | `ai model`. `GPT` ailesi altında. ucuz ve güçsüz.                                                                               |
+| `OpenAI`                                                 | `Sol`                                    | `ai model`. `GPT` ailesi altında. pahalı ve güçlü.                                                                              |
+| `OpenAI`                                                 | `Terra`                                  | `ai model`. `GPT` ailesi altında. dengeli                                                                                       |
+| `OpenAI`                                                 | `OSS`                                    | `ai model`. `GPT` ailesi altında. açık kaynaklı.                                                                                |
+| `OpenAI`                                                 | `Codex`                                  | eskiden sadece `ai model`'di. daha sonra tüm görevleri tek başına yapabiliyor duruma geldi. özel bir desktop uygulaması da var. |
+| `OpenAI`                                                 | `ChatGPT`                                | görevleri: `ai model` hariç herşey.                                                                                             |
+| `Google DeepMind`                                        | `Gemini`                                 | görevleri: tümü. sadece bulut hizmeti ile sunuluyor.                                                                            |
+| `Google DeepMind`                                        | `Gemini Pro`                             | `ai model`.                                                                                                                     |
+| `Google DeepMind`                                        | `Gemini Flash`                           | `ai model`.                                                                                                                     |
+| `Google DeepMind`                                        | `Argon`                                  | `ai model`.                                                                                                                     |
+| `Google DeepMind`                                        | `Gemma`                                  | `ai model`. local'e kurulabiliyor.                                                                                              |
+| `Microsoft`                                              | `Copilot`                                | görevleri: `ai model` hariç herşey.                                                                                             |
+| `Anthropic`                                              | `Haiku`                                  | ucuz ve güçsüz. `ai model`.                                                                                                     |
+| `Anthropic`                                              | `Fable`                                  | `Sonnet`'ten güçsüz, ama `Haiku`'dan güçlü. `ai model`.                                                                         |
+| `Anthropic`                                              | `Sonnet`                                 | dengeli. `ai model`.                                                                                                            |
+| `Anthropic`                                              | `opus`                                   | pahalı ve güçlü. `ai model`.                                                                                                    |
+| `Anthropic`                                              | `Claude`                                 | görevleri: `ai model` hariç herşey.                                                                                             |
+| `Anthropic`                                              | `Claude Code`                            | sadece komut satırı `API`'si sunuyor. görevleri: `ai model` hariç herşey.                                                       |
+| `Cognition`                                              | `SWE`                                    | ai model.                                                                                                                       |
+| `Cognition`                                              | `Devin (⟷ old-name:Windsurf)`            | `VS Code` fork with `AI` customizations. görevleri: ai model hariç herşey.                                                      |
+| `Anysphere` (group company: `SpaceXSI (⟷ old-name:xAI)`) | `Cursor`                                 | `VS Code` fork with `AI` customizations. görevleri: `ai model` hariç herşey.                                                    |
+| `Alibaba`                                                | `Qwen`                                   | görevleri: tümü.                                                                                                                |
+| `DeepSeek`                                               | `DeepSeek`                               | görevleri: tümü.                                                                                                                |
+| `xAI`                                                    | `Grok`                                   | görevleri: tümü. `Twitter` firması, bunu son kullanıcılara (üyelerine) kullandırtıyor.                                          |
+
+## 📌 Deep research 
+
+bu özellik farklı pazarlama isimleri ile piyasada sunulmaktadır:
+- `Autonomous Agents`
+- `Advanced Reasoning & Research Loops`
+- `Autonomous Research`
+- `Wide Research`
+
+`ai orchestrator` ve/veya `ai agent`'ların bir öelliğidir.
+
+hangi özelliklerin olacağı net değildir.
+
+şunları barındırabilir:
+
+- normalde `google` sonuçları sadece preview metinleri okunup değerlendirilirken, `Deep research` aktif ise, sayfa tamamen indirilir ve içerik değerlendirilir.
+
+- istatistiksel uzun hespalamalar gerekiyorsa, bir kod izole ortamda çalıştırılır.
+
+- `Agentic Loop (⟷ Ajan Döngüsü ⟷ Otonom Döngü)`
+
+  cevap geliyor `ai model`'den `ai agent`'a. `ai agent` bu cevabı farklı yollarla tekrar denetliyor (valide ediyor). edemezse eksik var diyor ve tekrar `ai model`'e soruyu yönlendiriyor.
+
+## 📌 ollama
+
+açık kaynaklı bir yazılım.
+
+her `LM` bir fonksiyon. bu fonskiyon bir `ai model`'dir. bu fonksiyonları açık kaynaklı format olan `gguf` uzantılı dosyada tutarız. `ollama`'yı çalıştırdığımızda:
+- `gguf` dosyasını okur,
+- `HTTP` `API` açar ve bu fonksiyonun çağrılabilmesini sağlar. `OpenAI`-compatible `API`'si ile uyumlu `HTTP` server `API` expose eder. Ek olarak bağımsız kendi `API`'si de var.
+
+bu tarz framework'lere `inference runtime (⟷ inference framework)` deniliyor.
+
+## 📌 inference runtime cache
+
+genelde son kullanıcının eski chat mesajlarıda `inference runtime`'a yollandığı için, `inference runtime` kendi içinde bunlar için cache tutar. böylece `LLM`'e hesaplama yaptırmaz. bu geçmiş mesajların tutulması pattern'ine `prefix caching` deniliyor.
+
+örneğin; `KV (⟷ key-value)` Cache.
+
+## 📌 llama.cpp
+
+`ollama`'nın arkaplanda kullandığı `C++` kütüphanesidir. Bu kütüphane ile programatik olarak `ollama`'nın yaptığı herşeyi yapabiliriz.
+
+## 📌 logit
+
+`ai model`'in her hesaplamada ürettiği bir sayısal değerdir.
+
+istatistik bilimindeki `logistic unit` teriminden esinlenerek türetilen bir terimdir.
+
+bir sonraki `token`'ın (kelime veya kelime grubunun) gelme olasığının puanı. bu an ne kadar yüksek ise, o kelimenin cümlenin devamına eklenme olasılığı o kadar fazladır.
+
+örnek:
+
+input: `Türkiye'nin başkenti neresidir?`
+
+- next `token` - `logit`
+- `ankara` - 99
+- `istanbul` - 5
+- `izmir` - 1
+
+`ai model` bu puanı şöyle hesaplıyor: eğitim data'sında ilgili kelime (veya kelime grubunun) geçtiği cümlelerde, ankara ve `istanbul` ve `izmir`'in geçme oranı. Tabi bunun çok detayı var:
+
+- noktalama işaretleri,
+- kelimenin gerçek (kök) anlamaları,
+- bağlaçlar,
+- geçtiği paragraflar
+
+gibi birçok faktör de değerlendirilmektedir.
+
+## 📌 reasoning vs sampling
+
+`ai model`'in bu süreçleri yönetebilmesi için `inference runtime` şarttır.
+
+`ai model` asıl cevabı dönmeden önce ara adımlar (hesaplamalar) yürütebilir. bunları tekrar kendine girdi olarak verip, sonuca ulaşabilir. bu sürece genel olarak `reasoning` denir.
+
+`ai model` her ara hesaplama sonrası `logit` üretir. `sampling` aşamasında ise, `inference runtime`, bu `logit`'lerin arasından seçim yapma aşamasıdır. seçimleri yapmak için son kullanıcıdan aldığı veya `ai assistant`'tan alınan `temperature`, `top-k`, `top-p` gibi ayarlara (oranlara) göre hareket eder.
+
+`inference runtime`, seçtiği `token`'ları `context`'e ekler ve gerekirse tekrar `ai model`'i çağırır.
+
+## 📌 harcanan token (son kullanıcı ücretlendirmesi)
+
+dünyanın en zor matematik problemi `X` sorusu olsun. son kullanıcı şunu sorabilir:
+
+`bana dünyanın en zor problemini çözmeye çalış ve çözümü var ise, bana evet yaz. yok ise hayır yaz.`
+
+bu durumda response `token` 1 kelimelik olacak. ücret düşük ama işlem hacmi büyük. sistemin daha adaletli olabilmesi için; `inference runtime` her `ai model`'ı çağırdığındaki input ve output'lardaki toplam `token` sayısı son kullanıcıya yansıtılır.
+
+## 📌 OpenRouter
+
+`AI` için `API gateway`'dir. Birçok farklı `AI`'ya, ortak bir `API` üzerinden text ve görsel gibi medyalarla iletişim kurabilmemizi sağlar. Açık kaynaklı değildir. Ve sadece bulutta çalışır. local'e indirebileceğimiz bir yazılım değildir.
+
+Bu yazılıma alternatif local'e kurulabilecek açık kaynaklı yazılımlar: `LiteLLM`, `Bifrost`.
+
+`OpenAI` şirketinin kendi ürünleri için kullandığı `API` formatı piyasada sıkça tercih ediliyor. Bu sebeple `OpenRouter`, `OpenAI` ile çok uyumlu olacak şekilde tasarlanmış durumda.
+
+## 📌 Safeguard vs guardrails
+
+- doğru yetkili kişi `MCP`'yi çağırmışmı, ve `MCP`'ye giden data'larda şirket içi gizli bilgi var mı?
+- `ai model` response'unda sakıncalı bilgi var mı?
+- `ai model`'e giden sorularda sakıncalı soru var mı?
+- `ai assistant` response'unda sakıncalı bir bilgi var mı?
+
+gibi akışları kontrol eden yazılımlara `guardrails` denir. Sadece `guardrails` isminde ürün var piyasada. bu terim ürün isimlerinde suffix veya prefix olarak ta kullanılıyor.
+
+`Safeguard` ise `guardrails`'ın kural motorudur. Bu sadece bir `regex` motoru da olabilir, veya sadece `ai model`'de olabilir.
+
+## 📌 piyasadaki bazı yazılımlar
+
+| app name              | Amaç    | focus                            | web | desktop app | cli | runs inside `docker`   | `ACP` server             | `ACP` client | expose `OpenAI`-compatible `API` |
+|-----------------------|---------|----------------------------------|-----|-------------|-----|------------------------|--------------------------|--------------|----------------------------------|
+| `odysseus`            | general |                                  | yes | no          | no  | yes                    | no                       | no           | ?                                |
+| `hermes agent`        | general | agentic loops, deep research     | no  | yes         | yes | no                     | yes                      | no           | yes                              |
+| `opencode`            | coding  |                                  | yes | yes         | yes | no                     | yes                      | no           | ?                                |
+| `OpenClaw`            | general | Channel adapters (gateway)       | no  | no          | no  | yes                    | yes                      | no           | yes                              |
+| `Pi Agent`            | general | simplisity for hooks and plugins | no  | no          | yes | yes (`npm` project)    | no (but 3rd party exist) | no           | ?                                |
+| `Open WebUI`          | general | web user interface, client       | yes | no          | ?   | yes (`python` project) | no                       | no           | ?                                |
+| `Open WebUI Computer` | general | agent only                       | no  | no          | ?   | ?                      | no                       | no           | yes                              |
+| `agent zero`          | general | containerized `ai agent`s        | yes | no          | ?   | yes                    | ?                        | no           | ?                                |
+| `nanobot`             | general | ultra lightweight                | yes | no          | yes | yes (`python` project) | no                       | no           | yes                              |
+
+- `opencode`'un `IDE` eklentisi var. ama sadece `ACP` protocol'ünü destekliyor. `ACP`'nin sağladıklları aşırı kısıtlı. autocomplete desteği bile yok.
+
+- herhangi bir `ACP` client desktop app (örnek: https://github.com/formulahendry/acp-ui), veya `VSCode` `ACP` client eklentisi ile (örnek: https://github.com/formulahendry/vscode-acp) ile `ACP` server destekleyen `ai agent`'a bağlanabiliriz. Bu durumda `ACP` client, `ai assistant` görevini görecektir.
+
+- `agent zero` her `ai agent`'ı ayrı bir `container`'da, `Linux` ve `XFCE` ile çalıştırıyor. Son kullanıcıya chat arayüzünde bu masaüstün bir sanal görüntüsünü `HTML` `Canvas` ile yansıtıyor. Kullanıcı ekranı canlı görebiliyor.
+
+## 📌 Agent Client Protocol (⟷ ACP)
+
+`IDE`'lerin `ai agent`'lar ile haberleşmesi için bir standarttır.
+
+## 📌 protocol'ler
+
+https://hermes-agent.nousresearch.com/docs/developer-guide/programmatic-integration
+
+Buradan da görüldüğü gibi `hermes agent`, `ai agent` olarak 3 farklı protocol'ler aynı amaç için hizmet veriyor:
+
+- `ACP`
+- `OpenAI`-compatible `API`
+
+  normalde bu `ai model` `API`'si. ama burada client, arkaplanda `ai agent` olduğundan habersiz.
+
+- `TUI`
+
+  sadece `hermes agent`'a özgü bir protocol. tüm özellikler burada çalışıyor. diğerlerinde kısıtılı özellikler var.
+
+## 📌 ai agent'ın MCP API expose etmesi
+
+bu `API` üzerinden sadece yönetimsel bilgiler expose edilir. örneğin; tüm chat history'ler listelenebilir. `LLM` gibi zeka gerektiren işler için `MCP` çağrılmaz.
+
+client server mimarisinde olur istekler.
+
+## 📌 Agent2Agent Protocol (⟷ A2A Protocol)
+
+açık kaynaklıdır. `MCP` gibi düşünülebilir ama `ai agent` tool sunmaz. onun yerine `ai agent` capability'lerini paylaşır (`Agent Card` deniliyor buna). `mcp` gibi deterministik ve predictable değildir.
+
+## 📌 autocomplete of IDE
+
+`IDE`'lerin `ai agent`'lar ile `openai`-compatible `API` üzerinden haberleşip autocomplete gibi `AI` özelliklerini kullanıyorlar. Tabi farklı provider spesifik `API`'lerde var.
+
+## 📌 language server protocol (⟷ LSP)
+
+`Language server`, `IDE`'den bağımsız çalışan bir yazılımdır. `ide` (client) sunucuya (`language server`'a) bağlanır ve ona kodları yollar, kodları alan sunucu sürekli olarak client'e rapor verir. her `ide` için ayrı eklenti yazmaktansa, `IDE`'ler bu protocol'ü desteklediği sürece her dile destek verebilirler.
+
+`language server` ile neredeyse her şey yapılabilir. örnek: 
+
+- code completion
+- hover tooltips
+- jump-to-definition
+- find-references gibi.
+
+`language server` ile client'ın haberleştiği protocol `LSP`'dir.
+
+## 📌 LangChain
+
+`ai agent` yazmak için `JS` ve `python` kütüphanesinin ismi.
+
+`LangChain4j`, `LangChain` geliştiricilerinden bağımsız, açık kaynaklı geliştirilen `Java` `API`'si.
+
+## 📌 Retrieval-Augmented Generation (⟷ RAG)
+
+`türkçe`: `Bilgiyle Zenginleştirilmiş Yanıtlama`.
+
+dış kaynaklardan bilgileri toplayıp, bu bilgileri `ai model`'e yollama pattern'i.
+
+## 📌 fine-tuning
+
+terim çok genel anlamlı olduğu için kafa karışıklığına sebep olabiliyor.
+
+eğitilmiş `LLM`'i, ek bir data ile eğitime sokmaktır.
+
+## 📌 mcp (⟷ Model Context Protocol)
+
+açık kaynaklı protocol'dür. bir program, `TCP` üzerindeki haberleşme protocol'lerini kullanarak `API` sunarak hizmet sunar. `ai agent` external yerlerden bilgi toplamak icin bu `API`'lerden yararlanmir.
+
+`MCP` şu protocol'ler üzerinden çalışabilir:
+- `HTTP`
+- `Stdio`
+
+`MCP` API sunmayan yazılımlar için araya bir adaptör servisi gerekebilir. Böyle durumlar için 2 çözüm var:
+- Bu servis local'de `ai orchestrator` ve/veya `ai agent` tarafından hard-coded yazılmış olabilir. Bu gibi durumlarda, bu servis `MCP` listesinde son kullanıcıya listelenmeyebilir. Çünkü zaten `ai orchestrator` ve/veya `ai agent`'ın gömülü yeteneğidir.
+- bu adaptör servisi son kullanıcı tarafından local'den run edilir. `ai orchestrator` ve/veya `ai agent` bu servise `MCP` ile gider.
+
+`MCP`'nn sunduğu her `API` fonksiyonu, 3 çeşit olabilir:
+
+### 📌📌 tool
+
+işlemin nerede execute edileceği belli, ama neyin execute edileceği tamamen MCP client'a kamış fonksiyonlardır.
+
+örneğin; vereceğim `SQL`'i `Oracle DB`'de çalıştıran fonksiyon.
+
+### 📌📌 resource
+
+önceden belirlenmiş, sabit bir işlem yapabilmemizi sağlar.
+
+örneğin; ID'sini vereceğim customer'ın bilgilerini döndüren fonksiyon.
+
+### 📌📌 prompt
+
+hazır prompt şablonları sunar.
+
+## 📌 MCP sampling
+
+`MCP`'nin de `ai model` çağırmaya ihityacı olabilir. örnek: `ai model`, `MCP`'den şunu istedi:
+
+```
+son 100 adet log arasından, en kritik 10 tanesini ver.
+```
+
+`MCP` tekrar `ai agent`'a, `ai model`'e sorgulaması için bir istek atar. Buradaki avantaj şu: Sadece bu akış için `MCP`'nin kullanacağı `ai model`'i istersek, daha ucuz veya özel bir sebepten farklı bir `ai model` seçebiliriz.
+
+## 📌 Cline vs Continue
+
+bu 2 eklenti şu katmanların görevlerini içeriyor:
+- `ai assistant`
+- `ai orchestrator`
+- `ai agent`
+
+İkiside, `CLI`, `VS Code` extension ve `JetBrains` plugin olarak çalışıyor.
+
+`Cline` agent moduna ağırlık verirken, `Continue` ise, chat, `IDE`'de kod yazarken otomatik tamamlama gibi anlık feature'lere odaklanıyor.
+
+`Cline`'ın arkaplanda süreçleri işletebilmesi gerektiği için kendi desktop native app'leri de var.
+
+## 📌 Github Copilot Chat
+
+`VScode` eklentisi. `VScode` repository'sinde bağımsız bir dizinde eklenti olarak geliştiriliyor. ama lisans sebepleri ile `vscodium`'a kurulamıyor.
+
+`vscode` içerisinde eklenti listesinde var ve disable edilebiliyor. `github` `copilot` dışında da `ai model`'leri destekliyor.
+
+## 📌 Github Copilot vs Continue
+
+| `Continue`                                             | `Github` `Copilot`                                         | Cline                                 |
+|--------------------------------------------------------|------------------------------------------------------------|---------------------------------------|
+| `rule`                                                 | `instruction` with `*` `regex`                             | `rule`                                |
+| `rule` mentioning manually for which files it will run | `instruction`                                              | conditional `rule`                    |
+| `Prompt`                                               | `Prompt`                                                   | manually run `Skill` via slash prefix |
+| not exist                                              | `Skill`                                                    | `Skill`                               |
+| `Chat` (does not enable any embedded tool or MCP)      | not exist                                                  |                                       |
+| `plan` can be used                                     | `ask` agent (enables only read-only embedded tool or MCPs) | `plan` mode can be used               |
+| `plan` (enables only read-only embedded tool or MCPs)  | `plan` agent                                               | `plan`                                |
+| `agent` (enables all embedded tool or MCPs)            | `agent` agent                                              | `act` mode                            |
+
+`Plan` mode vs `chat` mode for `Github` `Copilot`: `Plan` modunda, sadece system prompt'ları var hazır aşağıdakiler gibi:
+
+- plan olarak, madde madde her aşamayı detaylı açıkla.
+- plan işletilirse, burada istisna bir durum olması durumunda hangi çözüm uygulansın diye son kullanıcıya sor.
+- plan hazır olduğunda son kullanıcıya bu planı agent'ın anlayacağı şekilde dosya olarak kaydetmek için sor.
+
+## 📌 Github Copilot customizations
+
+bu tanımlar sadece `github` `copilot` (`vscode` eklentisi ve masaüstü application'ı) için geçerli terimler. bu terimler genel `AI` dünyasında farklı anlamlara gelebilir.
+
+Terimlerin farklılıkları burada anlatılmış:
+
+https://code.visualstudio.com/docs/agents/concepts/customization#_customization-options-at-a-glance
+
+### 📌📌 Prompt
+
+son kullanıcı chat'inden, komut gibi, manuel çağrılır. her `Prompt` bir senaryo dosyasıdır. örnek:
+
+```markdown
+---
+description: Java kodunu review et
+---
+
+Seçili Java kodunu incele.
+
+Bug, null-safety ve performans sorunlarını listele.
+
+Minimal düzeltme öner.
+```
+
+bu dosya burada ise:
+
+`.github/prompts/java-review.prompt.md`
+
+bunu çağırmak için şu yazılmalıdır `prompt`'a:
+
+```text
+/java-review
+```
+
+### 📌📌 Skill
+
+her `skill` birer text dosyasıdır. örnek:
+
+`AI assistant` bu `skill` dosyalarının sadece isimlerini ve açıklama kısımlarını `AI`'a yollar. Artık `AI`, eğer son kullanıcı unit test yazdırmak isterse, tüm dosyası `AI assistant`'tan ister ve okur ve sonra bu dosyadaki kurallara dikkat ederek işlemlere devam eder.
+
+```markdown
+# Skill: Unit Test Yazma
+
+## Açıklama
+Verilen fonksiyon veya sınıf için sınır durumlarını (edge cases) da kapsayan, standartlara uygun unit test kodları üretir.
+
+## Parametreler
+- source_code (Metin, Zorunlu): Test yazılacak kaynak kod veya fonksiyon.
+- framework (Metin, İsteğe Bağlı): Kullanılacak test kütüphanesi (örn: PyTest, Jest, JUnit).
+
+## Beklenen Çıktı
+Kaynak koda uygun, çalıştırılmaya hazır unit test dosyası içeriği.
+```
+
+### 📌📌 instruction
+
+her chat'e mutlaka otomatik eklenir. ama bazı `instruction`'lar `regex` gibi tanımlarla ne zaman yollanacağı belirlenebilir.
+
+örneğin; aşağıdaki `instruction` projemizde varsa, `java` dosyası chat'e eklenmişse, bu `instruction` mutlaka `AI`'a yollanır.
+
+```markdown
+---
+applyTo: "*.java*"
+---
+- Java 21 kullan.
+- Constructor injection kullan.
+- Testlerde JUnit 5 kullan.
+- Build komutu olarak `./mvnw` kullan.
+```
+
+### 📌📌 agent
+
+`ai agent`'ın kullanacağı tüm config'leri barındırdığı için `agent` olarak isimlendirilmiştir. bu sebeple biraz terim karmaşası oluşabilir. `github`'ın `copilot` yazılımının 1 `ai agent`'i var sadece. o motor hiçbir şekilde değiştirilemiyor. Fakat `agent` ayarındaki config'ler ile manipüle edilebiliyor.
+
+`agent`; `instruction`, `skill`, `mcp` servers, `prompt` gibi özellikleri 1 noktadan yönetip gruplamamızı sağlıyor. böylece 1 `agent` değişikliği yapıp, tüm bu özellikler arasından sadece bazıları aktif edebiliriz.
+
+örnek olarak proje dizinimiz içinde şurada dosya oluşturursak:
+
+`.github/agents/maven-java-maintainer.agent.md`
+
+`vscode` `copilot` eklentisinde, `AI` chat penceresini açtığımız zaman bu profili (`agent`'ı) direk seçip `AI` ile chat'leşmeye başlayabiliriz.
+
+`.github/agents/maven-java-maintainer.agent.md` dosyası içinde hangi tool'ların aktif olacağını vs yazabiliyoruz. Hatta bağımsız dosyalara referans verebiliyoruz. Böylece örneğin farklı `agent`'lar ortak `instruction`'lar kullanabilir.
+
+eklenti ile default gelen 3 adet `agent` var:
+
+- `ask`
+- `plan`
+- `agent` (böyle olması isimlendirme karmaşası yaratıyor. ama aslında bu da agent'ın ismi.)
+
+### 📌📌 hook
+
+`hook`, `github` `copilot` eklentisi herhangi bir aksiyon aldığında çalıştırılacak komut yazmamızı sağlar. 
+
+örnek: 
+
+komut satırından bir `mcp` `tool`'u call edilirse, audit log'atabiliriz.
+
+### 📌📌 plugin
+
+1 `vscode` eklentisinin, `github` `copilot` `agent`'ın yapabildiği herşeyi yapar. Ek olarak;
+
+- `mcp` server açılmasını sağlar.
+- `hook` kurarlar.
+
+## 📌 agent harness (⟷ AI harness) vs ai orchestrator
+
+2 terim çok fazla içiçe. Keskin ayrım yapmak çok zor.
+
+`ai orchestrator`'ın amacı sadece akışın sırasını belirlemektir. `AI harness` bu işin dışında kalan tüm platform ile ilgilenir.
+
+| capability      | `AI harness`                                                | `ai orchestrator`                                                              |
+|-----------------|-------------------------------------------------------------|--------------------------------------------------------------------------------|
+| `ai agent`      | `ai agent`'ı gerekli izole ortamda run eder                 | hangi `ai agent`'ın çağrılacağına karar verir                                  |
+| `mcp`           | `mcp` server'ı gerekli izole ortamda run eder               | hangi `mcp` server'lara hangi akışlarda çağrılacağına karar verir              |
+| hata durumları  |                                                             | akışta hata alınırsa ne yapılmalı onu belirler (örnek tekrar denensin)         |
+| `ai model`      | `ai model`'e olan bağlantıyı yönetir.                       | hangi `ai model` çağrılacak ona karar verir                                    |
+| `timeout`       | herhangi bir yazılımın max işletme süresini geçerse kapatır | hangi yazılım en fazla kaç saniyede dönüş yapmalı diye karar verir             |
+| chat history    | saklar                                                      | chat history'nin kullanılıp kullanılmayacağına istediği aşama için karar verir |
+| paralel çalışma | istenilen yazılımların paralel çalışması için altyapı sunar | hangi yazılımların paralel çalışacağına karar verir                            |
+
+## 📌 agent harness options of github copilot chat vscode extension
+
+`github`'ın `copilot` yazılımı `AI harness` olarak bunları kullanabiliyor:
+
+- `Copilot`
+
+  local `OS`'teki `github` `copilot` process'ini
+
+- `local`
+
+   `VSCode`'s built-in extension'ın kendisindeki kodu
+
+- `Claude`
+
+  `Claude Agent SDK`, `VSCode` içinde default gömülü geliyor. bu SDK ile local `Claude`'a bağlanır. local `Claude` istersen remote'a kendi gidebilir.
+
+- `Cloud`
+
+  uzakta olan `AI harness`'ı
+
+## 📌 AGENTS.md
+
+`https://agents.md/` sitesinde anlatılan dosyadır. bu `github` `copilot`'un kullandığı `agent` dosyasından tamamen farklıdır.
+
+projenin root'unda olması şart. `ai agent` için genel bilgilendirme dosyasıdır. 
+
+`github` `copilot`'taki `instruction` özelliğine denk gelir. fakat bu dosya, marka ve üründen bağımsızdır. genel bir kabul görmüş standart dosyadır. bazı şirketler bu dosyayı da aynı amaçla okur:
+
+- `CLAUDE.md`
+- `GEMINI.md`
+
+## 📌 NLP (⟷ Natural Language Processing ⟷ Doğal Dil İşleme)
+
+başka başlıkta anlatılmaktadır.
+
+## 📌 derin öğrenme (⟷ deep learning ⟷ deep structured learning ⟷ hiyerarşik öğrenme)
+
+makine öğrenmesinin bir alt dalıdır. çok katmanlı `AI`'ların kullanılmasıdır. örnek: araba kullanan `AI` yapacağız. level'lar:
+
+- piksel
+- köşeler (kenarlar)
+- direksiyon, fren, pencere
+- araba
+
+## 📌 YSA modelinin boyutu
+
+`ai model`in boyutu eğitilen datanın boyutu ile orantılı değil.
+
+istediğimiz kadar küçük bir `ai model`i, istediğimiz kadar büyük bir data ile eğitebiliriz. `ai model` içinde her konu (domain) (örneğin fizik, matematik, Java) ayrı modül olarak durmaz. aynı `weight`'lar tüm konular için hesaplamaya girer. bu sebeple; küçük `ai model` kullanıp büyük eğitim datası verirsek, aynı `weight`'ları birçok farklı konu için kullanmış oluruz. böyle olursa, `ai model` detayları unutmaya başlar.
+
+`ai model`in boyutu, `ai model` tasarlanırken, hard-coded `ai model` yazılımcısı tarafından set edilir.
+
+`ai model`in boyutu ile eğitim verilecek data boyutnun doğru orantılı olmasında kesinlikle fayda var.
+
+## 📌 AI assistant
+
+son kullanıcı ile ilk temasa gecen yazılımdır. Bu sebeple `AI application` olarakta adlandırılırlar.
+
+bu yazılımın kendisinde `ai model`'e benzer ufak ta olsa bir `AI` barındırmak zorunda değil. `AI` barındırıp barındırmayacağı, `AI assistant`'ın neleri desteklediğine bağlı değişir.
+
+## 📌 AI Orchestrator vs AI agent
+
+bu yazılımlar kendi içlerinde, `ai model`'e benzer ufak ta olsa bir `AI` barındırmak zorunda değildir.
+
+`AI Orchestrator`, birçok `AI agent`'a yönlendirme yapabilmemizi sağlayan bir yazılımdır. Her `AI agent` kendi içinde bunları barındırır:
+
+- gidebildiği `MCP` listesi
+- gidebildiği `ai model` listesi
+- isteği yerine etirene kadar ne kadar döngüsel işlem yapabileceğinin konfigürasyonları
+- gibi
+
+Her `AI agent`'ın scalability oranları farklı olabilir. Güvenlik ayarları farklı olabilir. Dolayısı ile bir sistemde birden fazla `AI agent` olabilir. Bunlara routing'i yapan yazılıma `AI Orchestrator` denir.
+
+Hangi `AI agent`'a gideceğini;
+- user anlık seçebilir
+- veya `AI Orchestrator`, user'ın input'ta verdiği topic'e göre doğru `AI agent`'a yönlendirebilir.
+
+## 📌 AI workflow
+
+piyasada `ai agent` olarak bilinir ama bu doğru değil.
+
+`ai model`'i çağıran (kullanan) bir otomasyon yazılımıdır. örnek:
+
+`Git` branch'inin güncellemesi sonrası hook aracılığı ile bu yaızlım koşmaya başlar. Bu yazılım kodun diff'lerini alır ve `ai model`'e yollar burada gördüğü hataları dönmesini ister. otomasyon, bu hata listesini alır ve `PR`'a comment olarak ekler.
+
+Burada süreç hard-coded'tır. Yani `AI` ne yapılacağına karar vermiyor. `AI` sadece bi araç.
+
+## 📌 Vector DB
+
+Aşağıdaki şemada `AI Orchestrator` ve `AI agent` aynı modülün içinde gösterilmiştir.
+
+```mermaid
+sequenceDiagram
+    autonumber
+    participant END_USER as END_USER
+    participant AI_ASSISTANT as AI_ASSISTANT<br><br>includes: Frontend
+    participant AI_ORCHESTRATOR as AI_ORCHESTRATOR
+    participant EMBEDDING_MODEL as EMBEDDING_MODEL
+    participant VECTOR_DB as VECTOR_DB
+    participant AI_ROUTER as AI_ROUTER<br><br>includes: available LLM list
+    participant LLM as LLM
+    participant MCP_SERVER as MCP_SERVER
+
+    END_USER->>AI_ASSISTANT: end_user_input_text<br>+<br>uploaded files
+
+    AI_ASSISTANT->>AI_ORCHESTRATOR: end_user_input_text<br>+<br>uploaded files<br>+<br>chat history<br>+<br>available MCP server list
+
+    AI_ORCHESTRATOR->>EMBEDDING_MODEL: end_user_input_text<br>+<br>uploaded files<br>+<br>chat history
+
+    EMBEDDING_MODEL->>AI_ORCHESTRATOR: VECTOR_VALUE
+
+    AI_ORCHESTRATOR->>VECTOR_DB: VECTOR_VALUE
+
+    VECTOR_DB->>AI_ORCHESTRATOR: similar_text
+
+    AI_ORCHESTRATOR->>AI_ROUTER: similar_text<br>+<br>end_user_input_text<br>+<br>uploaded files<br>+<br>available MCP tool and resource list<br>+<br>MCP execution results (if exist)<br>+<br>preferred LLM list
+
+    AI_ROUTER->>LLM: same as above payload except:<br>preferred LLM list
+
+    LLM->>AI_ROUTER: answer or 'MCP call require'
+
+    AI_ROUTER->>AI_ORCHESTRATOR: same payload as above
+
+    Note over END_USER,MCP_SERVER: Condition Start - if last response is 'MCP call require'
+
+    AI_ORCHESTRATOR->>MCP_SERVER: (mcp protocol)<br>tool<br>or<br>resource
+
+    MCP_SERVER->>AI_ORCHESTRATOR: (mcp protocol)<br>result of execution
+
+    AI_ORCHESTRATOR->>AI_ROUTER: Run all steps beginning from step 7
+
+    Note over END_USER,MCP_SERVER: Condition End
+
+    AI_ORCHESTRATOR->>AI_ASSISTANT: answer
+
+    AI_ASSISTANT->>END_USER: answer
+```
+
+`Vector` `DB`'de query atarak, yakın konulardaki metin sonuçlarını bulmuş oluruz. Bu akışın `AI` ile alakası yok aslında. Ama `AI`'ya tüm dökümanlarımızı atarsak çok kaynak tüketir diye, sadece ilişkili data'ları atmamız önerilir.
+
+`Vector` `DB`'ye sorgu attığımız zaman `vector` tipinde input veririz. return olarak `DB`'deki (`vector` uzayındaki), sorguladığımız `vector`'e en yakın `vector`'ü döner.
+
+`Vector` `DB`'ye insert etmeden önce, insert edeceğimiz tüm data'yı `vector`'e çevirmeliyiz. Bu işlemi yaparken `DB`'den bağımsız çalışan `Embedding` `ai model`'den (kendisi de bir `AI`) yararlanmak zorundayız. `Vector` `DB`'ye query atarken mutlaka aynı `Embedding` `ai model`'den yararlanmak zorundayız.
+
+`Vector` aramalarına `semantic search (⟷ anlamsal arama)` denir. çünkü sadece kelime köküne bakarak değil, tamamen anlamını anlayıp, diğer benzer kelimeleri bulmaktadır.
+
+### 📌📌 Embedding
+
+`Dil`'i (`string`'i) sayısal veriye (`vector`'e) dönüştürme işlemidir.
+
+`Embedding` `ai model` kelimelerin sözlük anlamlarını bilmiyor. Ama önceden eğitim almış. Bu sebeple; hangi kelimelerin, hangi kelimler ile ne kadar (hangi oranla) ilişkili olduğu bilgisine sahip. Böylece; input'ta `yazılım` kelimesi geçiyor ise, programlama ile ilgili tüm dökümanları döndürecektir.
+
+## 📌 context engineering vs propmt engineering
+
+Prompt, ne yapacağını; context ise hangi bilgiyle yapacağını belirten input'lardır.
+
+## 📌 short-term memory vs long-term memory
+
+`short-term memory`, son kullanıcının chat history'sidir.
+
+`long-term memory` ise birçok bilgisi kapsar:
+- `RAG` ile çekilen dosyalar
+- şirket içi dökümanlar
+- son kullanıcının genel karakteristiğini tutan bilgiler. örnekler:
+  - sürekli teknik terimler ile yazışmak istemesi.
+  - developer olması.
+  - her zaman tablo çıktılarını `HTML` output istemesi.
+- fetch edilen web sayfaları için varsa cache'leri
+- gibi.
+
+## 📌 AI model user options
+
+### 📌📌 temperature (⟷ Sampling Temperature ⟷ Örnekleme Sıcaklığı ⟷ Randomness ⟷ Rastgelelik)
+
+1 adet sayısal orandır.
+
+Modelin yanıtlarındaki rastgelelik ve yaratıcılık derecesini belirler. Düşük değerler daha tutarlı ve gerçekçi, yüksek değerler ise daha yaratıcı ve çeşitli çıktılar üretir.
+
+### 📌📌 top_p (⟷ Top Probability ⟷ Nucleus Sampling ⟷ Çekirdek Örnekleme)
+
+1 adet sayısal orandır.
+
+`temperature`'ye benzer. ama `top_p`'da keskin bi limit var. `top_p` sınırının aşağısında kalan çıktılar direk elenir. `temperature` ise şansları düşüktür.
+
+### 📌📌 Top-k sampling (⟷ Top-K most probable tokens)
+
+1 adet tam sayıdır.
+
+`top_p` ile apaynıdır. `top_p` ilk yüzde `P`'i seçerken, `Top-k sampling` ilk `K`'yı seçer.
+
+### 📌📌 max_length (⟷ Max Tokens ⟷ Maksimum Token ⟷ Çıktı Uzunluğu)
+
+1 adet tamsayıdır.
+
+Modelin üretebileceği maksimum `token` sayısını sınırlar. Bu sayede gereksiz uzun yanıtlar engellenir.
+
+### 📌📌 stop_sequences (⟷ Stop Words ⟷ Durdurma Kelimeleri ⟷ Durdurma Dizileri)
+
+bu bir string array'dir.
+
+bu string'lerden herhangi biri çıktı da var ise, `ai model` sonuç üretmeyi orada keser.
+
+### 📌📌 frequency_penalty (⟷ Frequency-based Penalty ⟷ Sıklık Cezası)
+
+1 adet sayısal orandır.
+
+bu oran yüksek oldukça aynı kelimeler daha az tekrar eder.
+
+### 📌📌 presence_penalty (⟷ Presence-based Penalty ⟷ Varlık Cezası)
+
+1 adet sayısal orandır.
+
+`frequency_penalty` ile aynı görevi görür. ama bu ayar ile, eğer 2inci kez geçtiyse aynı kelime o zaman zaten ceza alır `ai model`. oysa `frequency_penalty`'da kelime daha sık geçtikçe ceza oranı artar.
+
+## 📌 ai model çin dikkat edilecek hususlar (lisans ve açık kaynak olması durumları hakkında)
+
+`ai model`'i direk indirip kullanabiliriz. ama açık kaynaklı olduğu anlamına gelmez. kısmen açıkta olabilir. aşağıdakiler önemli:
+
+- eğitimde kullanılan data listesinin detayları (hangi gün ve saat nereden naısl indirilmiş)
+- eğitimde kullanılan data'nın fiziksel olarak indirmeye sunulması.
+- eğitim için indirilen tüm data kullanılmıyor genelde. içinde küfür, spam gibi içerikler filtrelenebiliyor. bu filtrelem işlemleri için kullanılan tüm kütüphaneler, tool'lar, script'ler ve config'ler.
+- eğitim sırasında kullanılan kütüphaneler, tool'lar, script'ler, makine bilgileri, config'ler ve eğitim sonrası yapılan testler, build süresi gibi bilgiler.
+- eğitim sonucunda çıkan dosyanın paylaşılması.
+- teknik makaleler: benchmark, test ve sonuçları, mimari açıklama ve öneriler, testler.
+- eğitimde kullanılan her data'nın ayrı ayrı lisansının ve yukarıdaki her config ve tool'un lisanslarının yayımlanması (ve tabi bu lisansların biribir ile uyumu kontrol edilmiş olmalı).
+
+Burada bazı tanımlara değiniliyor:
+
+https://github.com/Language-Technology-Assessment/main-database
+
+bu repo'dan bu web sayfası generate ediliyor: https://www.osai-index.eu
+
+alıntı olarak kopyalıyorum:
+
+| Feature           | `Open Weight`            | `OSAI` in `China`        | `OSAI` in the `US`          | `European Open Source AI` |
+|-------------------|--------------------------|--------------------------|-----------------------------|---------------------------|
+| Defined by        | -                        | `Open Atom Foundation`   | `Open Source Initiative`    | `EU AI Office`?           |
+| Model `Weight`s   | Released                 | Released                 | Released                    | Released                  |
+| Training Code     | Not Shared               | Fully Shared             | Fully Shared                | Fully Shared              |
+| Training Pipeline | Withheld                 | Nice to have             | Nice to have                | Fully Shared              |
+| Training Data     | Not Shared/Not disclosed | Not Shared/Not disclosed | Encouraged (Closed allowed) | Fully shared              |
+| Data Composition  | Partially/Not Disclosed  | Fully Disclosed          | Fully Disclosed             | Fully Disclosed           |
+
+`Open Weight` resmi bir stadnart değil. piyasada kullanılan bir terim.
+
+Bu tablo dışında `OSI` kuruluşu, bir standart yayımlamıştır: `OSAID` (⟷ `Open Source AI Definition`) `1.0`.
+
+## 📌 chat GUI stream response of AI
+
+`LLM` hiçbir şekilde önceden belirlediği metinleri değiştirmez. Eğer değiştirmesi gerekirse; `aslında`, `daha doğrusu` gibi ifadelerle başlayan yeni cümleler kurar.
+
+## 📌 prompt tips
+
+### 📌📌 role belirten cümleler
+
+şu tarz cümle yerine:
+
+```
+sen tecrübeli bir analistsin.
+```
+
+bunu yazmak yerine rolün ne yapacağını (hangi konular için yorum yapıp yapmayacağını) yazmak daha doğru. çünkü bazı rol'ler çok keskin çizgilerle ayrılmıyor.
+
+### 📌📌 teknik bilgi sahibi olduğunu belirtmek
+
+```
+sen `Java` biliyorsun.
+```
+
+`ai model`, `java`'yı zaten biliyor. bilmezse dış dünyadan arama yapıyor. eğer ufak bir `ai model` kullanıyorsak, ve bilmediği konular olduğunu düşünüyorsak, bu konuları çok kısa tanıtan cümleler yazmak lazım.
+
+### 📌📌 kısa cevaplar isteme
+
+kısa cevaplar isterken, çok keskin şekilde şu kadar kısa dön gibi cümleler yazmamak lazım. öyle olursa önemli konuları ignore edebilir.
+
+### 📌📌 imla hataları
+
+imla hatalarını veya devrik cümleleri `ai model`'in anlaması ona ek maliyet yüklemektedir.
